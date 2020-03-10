@@ -1,7 +1,8 @@
-package com.parthbhardwaj.trendinggithubrepo
+package com.parthbhardwaj.trendinggithubrepo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.parthbhardwaj.trendinggithubrepo.R
 
 class MainActivity : AppCompatActivity() {
 
