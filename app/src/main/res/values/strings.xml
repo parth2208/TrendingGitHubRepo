@@ -7,4 +7,5 @@
     <string name="ic_sort_by_name">Sort by name</string>
     <string name="title_error">Something went wrong..</string>
     <string name="body_error">An alien is probably blocking your signal.</string>
+    <string name="retry_button">RETRY</string>
 </resources>
