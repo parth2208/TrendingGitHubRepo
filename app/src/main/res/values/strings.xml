@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">TrendingGItHubRepo</string>
+    <string name="app_name">TrendingGitHubRepo</string>
+
+    <string name="title_toolbar">Trending</string>
+
+    <string name="ic_sort_by_stars">Sort by stars</string>
+    <string name="ic_sort_by_name">Sort by name</string>
+    <string name="title_error">Something went wrong..</string>
+    <string name="body_error">An alien is probably blocking your signal.</string>
 </resources>
