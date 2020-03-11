@@ -96,7 +96,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/item_description">
 
-                <com.github.trendrepo.utils.CircleView
+                <com.parthbhardwaj.trendinggithubrepo.utils.CircularView
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:id="@+id/circular_dot"

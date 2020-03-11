@@ -6,8 +6,8 @@ import com.parthbhardwaj.trendinggithubrepo.utils.BaseViewModel
 
 class RepoTableViewModel : BaseViewModel() {
 
-    val repoTable: RepoTable? = null
-    val isExpanded: Boolean = false
+    var repoTable: RepoTable? = null
+    var isExpanded: Boolean = false
 
     fun bind(
         repoTable: RepoTable,
@@ -15,5 +15,9 @@ class RepoTableViewModel : BaseViewModel() {
         expanded: Boolean
     ){
 
+        repoTable.languageColor?.let {
+            binding.circularDot.setSolidColor(it) }
+        this.repoTable = repoTable;
+        this.isExpanded = expanded
     }
 }

@@ -3,7 +3,7 @@ package com.parthbhardwaj.trendinggithubrepo.di.module
 import android.app.Application
 import androidx.room.Room
 import com.parthbhardwaj.trendinggithubrepo.model.db.RepoDatabase
-import com.parthbhardwaj.trendinggithubrepo.model.db.RepoTableDao
+import com.parthbhardwaj.trendinggithubrepo.model.db.RepoDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -20,7 +20,7 @@ class DbModule {
 
     @Provides
     @Singleton
-    internal fun provideRepoTableDao(repoDatabase: RepoDatabase): RepoTableDao{
+    internal fun provideRepoTableDao(repoDatabase: RepoDatabase): RepoDao{
         return repoDatabase.repoTableDao()
     }
 

@@ -6,7 +6,7 @@ import androidx.room.Query
 
 
 @Dao
-interface RepoTableDao {
+interface RepoDao {
 
     @get:Query("SELECT * FROM repoTable")
     val all: List<RepoTable>
