@@ -13,4 +13,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:windowDisablePreview">true</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownHorizontalOffset">-14.0dp</item>
+        <item name="android:dropDownVerticalOffset">16.0dp</item>
+    </style>
+
 </resources>

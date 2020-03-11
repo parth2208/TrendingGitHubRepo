@@ -1,6 +1,9 @@
 package com.parthbhardwaj.trendinggithubrepo.viewModel
 
+import android.view.Gravity
+import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.MutableLiveData
 import com.parthbhardwaj.trendinggithubrepo.R
 import com.parthbhardwaj.trendinggithubrepo.databinding.ActivityMainBinding
@@ -93,6 +96,25 @@ class MainViewModel(
         errorVisibility.value = View.VISIBLE
         errorMessage.value = R.string.repo_error
         binding.shimmerViewContainer.stopShimmerAnimation()
+    }
+
+    fun onClickToolBarMenu(v: View) {
+        showFilterPopup(v)
+    }
+
+    private fun showFilterPopup(v: View) {
+        val popup =
+            PopupMenu(v.context, v, Gravity.END, 0, R.style.OverflowMenu)
+        popup.inflate(R.menu.main_menu)
+
+        popup.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
+            override fun onMenuItemClick(item: MenuItem): Boolean {
+                when (item.getItemId()) {
+                    else -> return false
+                }
+            }
+        })
+        popup.show()
     }
 
     override fun onCleared() {
