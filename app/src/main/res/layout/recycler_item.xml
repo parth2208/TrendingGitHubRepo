@@ -122,7 +122,7 @@
                     android:layout_height="16dp"
                     android:id="@+id/star_image"
                     android:layout_marginStart="16dp"
-                    android:src="@drawable/star-yellow-16"
+                    android:src="@drawable/star_yellow"
                     app:layout_constraintStart_toEndOf="@+id/language"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -141,7 +141,7 @@
                     android:layout_height="16dp"
                     android:id="@+id/fork_image"
                     android:layout_marginStart="16dp"
-                    android:src="@drawable/fork-black-16"
+                    android:src="@drawable/fork_black"
                     app:layout_constraintStart_toEndOf="@+id/star_text"
                     app:layout_constraintTop_toTopOf="parent" />
 
