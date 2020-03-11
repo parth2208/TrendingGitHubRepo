@@ -15,6 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  * This is the provider for all network required dependencies
  */
 @Module
+@Suppress("unused")
 object NetworkApiModule {
 
     /**
@@ -35,9 +36,9 @@ object NetworkApiModule {
     @Provides
     @Reusable
     @JvmStatic
-    internal fun provideRetrofitInterface(gson: Gson): Retrofit {
+    internal fun provideRetrofitInterface(): Retrofit {
         return Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create(gson))
+            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .build()

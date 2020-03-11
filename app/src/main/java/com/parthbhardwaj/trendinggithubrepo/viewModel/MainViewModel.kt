@@ -54,7 +54,7 @@ class MainViewModel(
         val minutes =
             TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - sharedPreferencesHelper.getValueLong("TIME")!!)
 
-        subscription = Observable.fromCallable { repoDao.all }
+        subscription = Observable.fromCallable { repoDao.completeRepository }
             .concatMap { dbRepositoryList ->
                 if (minutes >= 120 || dbRepositoryList.isEmpty())
                     repoApiService.getRepositories().concatMap { apiRepositoryList ->

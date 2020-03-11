@@ -9,7 +9,7 @@ import androidx.room.Query
 interface RepoDao {
 
     @get:Query("SELECT * FROM repoTable")
-    val all: List<RepoTable>
+    val completeRepository: List<RepoTable>
 
     @Insert
     fun insertAll(vararg posts: RepoTable)
