@@ -7,6 +7,10 @@
     <data>
         <import type="android.view.View" />
 
+        <variable
+            name="repoViewModel"
+            type="com.parthbhardwaj.trendinggithubrepo.viewModel.RepoTableViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,7 +46,8 @@
                 android:id="@+id/img_repo_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                bind:src_profile="@{repoViewModel.repoTable.avatar}"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -53,7 +58,8 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_repo_icon"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@{repoViewModel.repoTable.author}"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -64,6 +70,7 @@
                 android:textColor="@color/lightGray"
                 android:textSize="15sp"
                 android:textStyle="bold"
+                android:text="@{repoViewModel.repoTable.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_repo_icon"
                 app:layout_constraintTop_toBottomOf="@+id/item_title" />
@@ -74,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="@{repoViewModel.isExpanded ? View.VISIBLE : View.GONE}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraint_view_center">
 
@@ -83,6 +91,7 @@
                 android:id="@+id/item_description"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/lightGray"
+                android:text="@{repoViewModel.repoTable.description}"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -106,10 +115,11 @@
 
 
                 <TextView
-                    android:id="@+id/language"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/language_text"
                     android:layout_marginStart="6dp"
+                    android:text="@{repoViewModel.repoTable.language}"
                     android:textColor="@color/lightGray"
                     android:textSize="12sp"
                     app:layout_constraintStart_toEndOf="@+id/circular_dot"
@@ -121,7 +131,7 @@
                     android:id="@+id/star_image"
                     android:layout_marginStart="16dp"
                     android:src="@drawable/star_yellow"
-                    app:layout_constraintStart_toEndOf="@+id/language"
+                    app:layout_constraintStart_toEndOf="@+id/language_text"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -129,6 +139,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/star_text"
                     android:layout_marginStart="4dp"
+                    android:text="@{repoViewModel.repoTable.stars}"
                     android:textColor="@color/lightGray"
                     android:textSize="12sp"
                     app:layout_constraintStart_toEndOf="@+id/star_image"
@@ -148,6 +159,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/fork_text"
                     android:layout_marginStart="4dp"
+                    android:text="@{repoViewModel.repoTable.forks}"
                     android:textColor="@color/lightGray"
                     android:textSize="12sp"
                     app:layout_constraintStart_toEndOf="@+id/fork_image"
