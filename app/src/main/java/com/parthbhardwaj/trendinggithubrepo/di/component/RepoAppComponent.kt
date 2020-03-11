@@ -11,7 +11,7 @@ import javax.inject.Singleton
 @Component(modules = [DbModule::class,
                     NetworkApiModule::class])
 @Singleton
-interface AppComponent {
+interface RepoAppComponent {
 
     fun inject (mainViewModel: MainViewModel)
 
@@ -21,7 +21,7 @@ interface AppComponent {
         @BindsInstance
         fun application(application: Application): Builder
 
-        fun build(): AppComponent
+        fun build(): RepoAppComponent
 
         fun networkModule(networkApiModule: NetworkApiModule): Builder
 

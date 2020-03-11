@@ -55,6 +55,11 @@ class TrendingListAdapter: RecyclerView.Adapter<TrendingListAdapter.ViewHolder>(
         })
     }
 
+    fun updateItemList(itemList: List<RepoTable>){
+        this.repoList = itemList
+        notifyDataSetChanged()
+    }
+
     class ViewHolder(val binding: RecyclerItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         private val viewModel = RepoTableViewModel()

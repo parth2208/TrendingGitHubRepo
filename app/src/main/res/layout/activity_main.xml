@@ -7,6 +7,14 @@
 
         <import type="android.view.View" />
 
+        <import
+            alias="mainViewModel"
+            type="com.parthbhardwaj.trendinggithubrepo.viewModel.MainViewModel" />
+
+        <variable
+            name="viewModel"
+            type="mainViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,7 +56,7 @@
                     android:src="@drawable/ic_action_option"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -67,7 +75,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/post_list"
                 android:layout_width="0dp"
-                android:layout_height="0dp" />
+                android:layout_height="0dp"
+                app:adapter="@{viewModel.getItemListAdapter()}" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -80,7 +89,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
+            app:mutableVisibility="@{viewModel.getLoadingVisibility()}">
 
 <!--            Added 15 shimmer placeholder-->
             <LinearLayout
@@ -131,7 +141,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
+            app:mutableError="@{viewModel.getErrorVisibility()}">
 
             <LinearLayout
                 android:gravity="center"
@@ -202,7 +213,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteX="148dp"
-                tools:layout_editor_absoluteY="266dp" />
+                tools:layout_editor_absoluteY="266dp"
+                android:onClick="@{viewModel.errorClickListener}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -6,6 +6,7 @@
     <string name="ic_sort_by_stars">Sort by stars</string>
     <string name="ic_sort_by_name">Sort by name</string>
     <string name="title_error">Something went wrong..</string>
+    <string name="repo_error">Error while fetching data</string>
     <string name="body_error">An alien is probably blocking your signal.</string>
     <string name="retry_button">RETRY</string>
 </resources>
