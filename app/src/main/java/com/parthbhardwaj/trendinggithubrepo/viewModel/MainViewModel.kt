@@ -56,7 +56,7 @@ class MainViewModel(
 
         subscription = Observable.fromCallable { repoDao.completeRepository }
             .concatMap { dbRepositoryList ->
-                if (minutes >= 120 || dbRepositoryList.isEmpty())
+                if (minutes >= 15 || dbRepositoryList.isEmpty())
                     repoApiService.getRepositories().concatMap { apiRepositoryList ->
                         repoDao.insertAll(*apiRepositoryList.toTypedArray())
                         sharedPreferencesHelper.save("TIME", System.currentTimeMillis())

@@ -80,6 +80,11 @@ dependencies {
     //Circular
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    // Mokito
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    androidTestImplementation "org.mockito:mockito-android:$mockito_version"
+
+    testImplementation "com.squareup.okhttp3:mockwebserver:3.12.1"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
