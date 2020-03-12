@@ -9,7 +9,7 @@
 ## App Architecture
 This project uses MVVM Architecture.
 
-![picture alt](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sovereignconsult.com%2Fblog%2Fknow-mvvm-clean-architecture-android-app%2F&psig=AOvVaw1UexlNOTj3aOAoG__EmYcM&ust=1584088719927000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCRrcbElOgCFQAAAAAdAAAAABAa )
+[picture alt](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sovereignconsult.com%2Fblog%2Fknow-mvvm-clean-architecture-android-app%2F&psig=AOvVaw1UexlNOTj3aOAoG__EmYcM&ust=1584088719927000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCRrcbElOgCFQAAAAAdAAAAABAa )
 
 
 ## The app includes the following main components:
