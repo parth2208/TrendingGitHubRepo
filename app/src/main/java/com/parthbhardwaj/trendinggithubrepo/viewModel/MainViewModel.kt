@@ -67,32 +67,32 @@ class MainViewModel(
             }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe { onRetrievePostListStart() }
-            .doOnTerminate { onRetrievePostListFinish() }
+            .doOnSubscribe { onRetrieveItemListStart() }
+            .doOnTerminate { onRetrieveItemListFinish() }
             .subscribe(
-                { result -> onRetrievePostListSuccess(result) },
-                { onRetrievePostListError() }
+                { result -> onRetrieveItemListSuccess(result) },
+                { onRetrieveItemListError() }
             )
     }
 
-    private fun onRetrievePostListStart(){
+    private fun onRetrieveItemListStart(){
         errorVisibility.value = View.GONE
         binding.shimmerViewContainer.startShimmerAnimation()
         loadingVisibility.value = View.VISIBLE
         errorMessage.value = null
     }
 
-    private fun onRetrievePostListFinish(){
+    private fun onRetrieveItemListFinish(){
         loadingVisibility.value = View.GONE
         errorVisibility.value = View.GONE
         binding.shimmerViewContainer.stopShimmerAnimation()
     }
 
-    private fun onRetrievePostListSuccess(repositoryList: List<RepoTable>){
+    private fun onRetrieveItemListSuccess(repositoryList: List<RepoTable>){
         itemListAdapter.updateItemList(repositoryList)
     }
 
-    private fun onRetrievePostListError() {
+    private fun onRetrieveItemListError() {
         errorVisibility.value = View.VISIBLE
         errorMessage.value = R.string.repo_error
         binding.shimmerViewContainer.stopShimmerAnimation()
