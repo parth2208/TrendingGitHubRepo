@@ -21,7 +21,7 @@ class DbModule {
     @Provides
     @Singleton
     internal fun provideRepoTableDao(repoDatabase: RepoDatabase): RepoDao{
-        return repoDatabase.repoTableDao()
+        return repoDatabase.repoDao()
     }
 
 }
