@@ -27,11 +27,17 @@ class TrendingListAdapter: RecyclerView.Adapter<TrendingListAdapter.ViewHolder>(
         return ViewHolder(binding)
     }
 
+    /**
+     * Gets the count of the list
+     */
     override fun getItemCount(): Int {
         return if (::repoList.isInitialized) repoList.size else 0
 
     }
 
+    /**
+     * @param holder This will bind it to layout
+     */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         if (selectedNode != -1 && selectedNode == position) {
@@ -55,6 +61,9 @@ class TrendingListAdapter: RecyclerView.Adapter<TrendingListAdapter.ViewHolder>(
         })
     }
 
+    /**
+     * Notify any change in the Rx observable and make the change in recyclerview list
+     */
     fun updateItemList(itemList: List<RepoTable>){
         this.repoList = itemList
         notifyDataSetChanged()

@@ -8,6 +8,9 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import java.lang.Exception
 
+/**
+ * Use to show the solid colors corresponding to the language
+ */
 class CircularView : AppCompatTextView {
     private var strokeWidth: Float = 0.toFloat()
     internal var strokeColor: Int = 0

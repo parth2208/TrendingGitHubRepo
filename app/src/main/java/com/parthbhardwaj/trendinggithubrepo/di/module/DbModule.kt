@@ -8,6 +8,9 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
+/**
+* This module will provides required dependencies for db
+*/
 @Module
 class DbModule {
 

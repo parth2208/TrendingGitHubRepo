@@ -11,6 +11,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.parthbhardwaj.trendinggithubrepo.utils.getParentActivity
 
+/**
+ * Setting up the visibility of parentActivity
+ */
 @BindingAdapter("mutableVisibility")
 fun setMutableVisibility(view: View, visibility: MutableLiveData<Int>?) {
     val parentActivity: AppCompatActivity? = view.getParentActivity()
@@ -27,12 +30,17 @@ fun setMutableError(view: View, error: MutableLiveData<Int>?) {
     }
 }
 
-
+/**
+ * Setting the profile avatar into the circular view
+ */
 @BindingAdapter("src_profile")
 fun setMainImage(view: ImageView, text: String?) {
     Glide.with(view.context).load(text).apply(RequestOptions.circleCropTransform()).into(view);
 }
 
+/**
+ * binding the adaptar to the view
+ */
 @BindingAdapter("adapter")
 fun setAdapter(view: RecyclerView, adapter: RecyclerView.Adapter<*>) {
     view.adapter = adapter

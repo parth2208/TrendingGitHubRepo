@@ -4,6 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 
+/**
+ * It will save the data from the Rx observable which will help in keeping the stable while state changes
+ */
 class SharedPreferencesHelper(val  context: Context) {
 
     private val preference_name = "githubtrend"

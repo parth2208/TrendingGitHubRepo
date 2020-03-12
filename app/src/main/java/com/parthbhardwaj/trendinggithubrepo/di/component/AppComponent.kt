@@ -8,6 +8,9 @@ import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
+/**
+ * This component will provide inject() methods.
+ */
 @Component(modules = [DbModule::class,
                     NetworkApiModule::class])
 @Singleton

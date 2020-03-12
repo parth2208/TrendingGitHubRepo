@@ -7,6 +7,9 @@ import androidx.room.Room
 import com.parthbhardwaj.trendinggithubrepo.databinding.ActivityMainBinding
 import com.parthbhardwaj.trendinggithubrepo.model.db.RepoDatabase
 
+/**
+ * ViewModel factory to instantiate Db
+ */
 class ViewModelFactory(private val activity: AppCompatActivity,
                        private val binding: ActivityMainBinding
 

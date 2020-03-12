@@ -50,6 +50,9 @@ class MainViewModel(
         }
     }
 
+    /**
+     * Observe list of repositories save in to shared preference
+     */
     private fun loadRepositories(){
         val minutes =
             TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - sharedPreferencesHelper.getValueLong("TIME")!!)
@@ -75,6 +78,9 @@ class MainViewModel(
             )
     }
 
+    /**
+     * Start the shimmer animation on start of fetching the data
+     */
     private fun onRetrieveItemListStart(){
         errorVisibility.value = View.GONE
         binding.shimmerViewContainer.startShimmerAnimation()
@@ -82,16 +88,25 @@ class MainViewModel(
         errorMessage.value = null
     }
 
+    /**
+     * Stop shimmer animation on stop of data fetching
+     */
     private fun onRetrieveItemListFinish(){
         loadingVisibility.value = View.GONE
         errorVisibility.value = View.GONE
         binding.shimmerViewContainer.stopShimmerAnimation()
     }
 
+    /**
+     * Updates the DB on new list fetched
+     */
     private fun onRetrieveItemListSuccess(repositoryList: List<RepoTable>){
         itemListAdapter.updateItemList(repositoryList)
     }
 
+    /**
+     * Display error screen with error message on any kind of failure
+     */
     private fun onRetrieveItemListError() {
         errorVisibility.value = View.VISIBLE
         errorMessage.value = R.string.repo_error
@@ -102,6 +117,9 @@ class MainViewModel(
         showFilterPopup(v)
     }
 
+    /**
+     * Menu option for sorting the list
+     */
     private fun showFilterPopup(v: View) {
         val popup =
             PopupMenu(v.context, v, Gravity.END, 0, R.style.OverflowMenu)
@@ -117,6 +135,9 @@ class MainViewModel(
         popup.show()
     }
 
+    /**
+     * subscription is cleared
+     */
     override fun onCleared() {
         super.onCleared()
         subscription.dispose()
